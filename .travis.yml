@@ -16,7 +16,27 @@ matrix:
       sudo: required
     - python: 3.6
       env: TOXENV=cov
-      after_script:
+    - python: 2.7
+      arch: ppc64le
+      env: TOXENV=py27
+    - python: 3.4
+      arch: ppc64le
+      env: TOXENV=py34
+    - python: 3.5
+      arch: ppc64le
+      env: TOXENV=py35
+    - python: 3.6
+      arch: ppc64le
+      env: TOXENV=py36
+    - python: 3.7
+      arch: ppc64le
+      env: TOXENV=py37
+      dist: xenial
+      sudo: required
+    - python: 3.6
+      arch: ppc64le
+      env: TOXENV=cov
+after_script:
         - pip install coveralls;
         - coveralls;
 
